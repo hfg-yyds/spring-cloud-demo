@@ -1,0 +1,15 @@
+#Eureka server服务端⼝
+server:
+  port: 9001
+spring:
+  application:
+    name: eureka-server-9001 # 应⽤名称，会在Eureka中作为服务的
+#  id标识（serviceId）
+eureka:
+  instance:
+    hostname: eureka-server-9001
+  client:
+    service-url: # 客户端与EurekaServer交互的地址，如果是集群，也需要写其它Server的地址
+      defaultZone: http://eureka-server9001:${server.port}/eureka/,http://eureka-server9002:9002/eureka/
+    register-with-eureka: true # ⾃⼰就是服务不需要注册⾃⼰
+    fetch-registry: true #⾃⼰就是服务不需要从Eureka Server获取服务信息,默认为true，置为false

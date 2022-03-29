@@ -8,7 +8,6 @@ package com.hfg.entity;
  */
 public enum SchoolType {
 
-
     MIDDLESCHOOL("中学"),
     PrimarySchool("小学"),
     University("大学");

@@ -15,6 +15,16 @@ import java.util.TimeZone;
  */
 public class TestClass {
 
+    public void getClasss(Class<BlobTest> blobTestClass) {
+        System.out.println(blobTestClass);
+        System.out.println("测试");
+    }
+
+    @Test
+    public void test11() {
+        getClasss(BlobTest.class);
+    }
+
     @Test
     public void testBigDecimal() {
         System.out.println(0.1+0.2);
