@@ -1,5 +1,5 @@
 import lombok.SneakyThrows;
-import org.testng.annotations.Test;
+import org.junit.Test;
 
 import java.math.BigDecimal;
 import java.text.SimpleDateFormat;

@@ -15,7 +15,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @MapperScan("com.hfg.mapper")
 public class OrderService7001 {
     public static void main(String[] args) {
-        log.info("启动成功");
+        log.info("服务开始启动");
         SpringApplication.run(OrderService7001.class,args);
     }
 }

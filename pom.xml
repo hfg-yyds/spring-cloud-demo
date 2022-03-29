@@ -6,6 +6,7 @@
     <modules>
         <module>common</module>
         <module>order-service-7001</module>
+        <module>resume-service-8001</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -53,14 +54,21 @@
             <scope>test</scope>
         </dependency>
 
+        <!---->
         <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>RELEASE</version>
-            <scope>test</scope>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-logging</artifactId>
+        </dependency>
+
+        <!-- Actuator可以帮助你监控和管理Spring Boot应⽤-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
 
     </dependencies>
+
+
 
     <dependencyManagement>
         <dependencies>
