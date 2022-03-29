@@ -1,0 +1,24 @@
+server:
+  port: 8002
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springcloud?serverTimezone=GMT%2B8
+    password: 123456
+    username: root
+  application:
+    name: autodeliver-service-8002
+  profiles:
+    active: dev  # 环境设置：dev、test、prod
+  jackson: #返回json的全局时间格式
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #mybatisplus日志  --打印sql语句的日志
+  mapper-locations: classpath:com/hfg/mapper/xml/*.xml #配置mapper xml文件的路径
+  type-aliases-package: com.hfg.entities   #别名
+#logging:  ## 设置日志级别
+#  level: info

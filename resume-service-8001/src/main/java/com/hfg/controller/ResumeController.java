@@ -1,9 +1,17 @@
 package com.hfg.controller;
 
 
+import com.hfg.config.R;
+import com.hfg.entity.Resume;
+import com.hfg.mapper.ResumeMapper;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * <p>
@@ -16,6 +24,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/resume")
 public class ResumeController {
+
+    @Resource
+    private ResumeMapper resumeMapper;
+
+    @GetMapping("/getResumeList")
+    public R getResumeList() {
+        List<Resume> resumeList = resumeMapper.selectList(null);
+        return R.ok().data("resumeList",resumeList);
+    }
 
 }
 
