@@ -1,5 +1,6 @@
+
 server:
-  port: 7001
+  port: 8001
 
 spring:
   datasource:
@@ -8,7 +9,7 @@ spring:
     password: 123456
     username: root
   application:
-    name: order-service-7001
+    name: resume-service-7001
   profiles:
     active: dev  # 环境设置：dev、test、prod
   jackson: #返回json的全局时间格式
