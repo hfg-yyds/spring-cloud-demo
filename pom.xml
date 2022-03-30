@@ -10,6 +10,7 @@
         <module>autodeliver-service-8002</module>
         <module>eureka-service-9001</module>
         <module>eureka-server-9002</module>
+        <module>resume-service-8003</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
