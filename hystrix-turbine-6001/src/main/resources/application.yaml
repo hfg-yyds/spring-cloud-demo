@@ -1,27 +1,14 @@
 server:
-  port: 8002
+  port: 6001
 
 spring:
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/springcloud?serverTimezone=GMT%2B8
-    password: 123456
-    username: root
   application:
-    name: autodeliver-service
+    name: hystrix-turbine-6001
   profiles:
     active: dev  # 环境设置：dev、test、prod
   jackson: #返回json的全局时间格式
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
-
-mybatis-plus:
-  configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #mybatisplus日志  --打印sql语句的日志
-  mapper-locations: classpath:com/hfg/mapper/xml/*.xml #配置mapper xml文件的路径
-  type-aliases-package: com.hfg.entities   #别名
-#logging:  ## 设置日志级别
-#  level: info
 
 eureka:
   client:
@@ -34,8 +21,19 @@ eureka:
     #⾃定义实例显示格式，加上版本号，便于多版本管理，注意是ip-address，早期版本是ipAddress
     instance-id: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}:@project.version@
 
+# springboot中暴露健康检查等断点接⼝
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  #暴露健康接⼝的细节
+  endpoint:
+    health:
+      show-details: always
 
-#针对的被调⽤⽅微服务名称,不加就是全局⽣效
-resume-service:
-  ribbon:
-    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule #负载策略调整
+turbine:
+#appCofing配置需要聚合的服务名称，⽐如这⾥聚合⾃动投递微服务的hystrix监控数据
+#如果要聚合多个微服务的监控数据，那么可以使⽤英⽂逗号拼接，⽐如 a,b,c
+  app-config: autodeliver-service
+  cluster-name-expression: "'hystrix-turbine'"
