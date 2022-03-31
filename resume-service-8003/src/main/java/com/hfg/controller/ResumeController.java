@@ -64,6 +64,20 @@ public class ResumeController {
         return R.ok().data("port",port).data("resumeList",resumeList);
     }
 
+    @HystrixCommand(
+            threadPoolKey = "testHystrix",
+            //线程池的属性
+            threadPoolProperties = {
+                    @HystrixProperty(name = "coreSize", value = "1"), //并发线程数
+                    @HystrixProperty(name = "maxQueueSize", value = "20")   //默认线程队列为-1  默认不开启
+            },
+            fallbackMethod = "fallBackMethod"
+
+    )
+    public R testHystrix() {
+        return R.ok().data("Results","返回结果,测试正常");
+    }
+
     public R fallBackMethod() {
         return R.ok().data("Fallback","服务降级");
     }

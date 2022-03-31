@@ -5,12 +5,13 @@
     <packaging>pom</packaging>
     <modules>
         <module>common</module>
-        <module>order-service-7001</module>
+        <module>school-service-7001</module>
         <module>resume-service-8001</module>
         <module>autodeliver-service-8002</module>
         <module>eureka-service-9001</module>
         <module>eureka-server-9002</module>
         <module>resume-service-8003</module>
+        <module>hystrix-turbine-6001</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

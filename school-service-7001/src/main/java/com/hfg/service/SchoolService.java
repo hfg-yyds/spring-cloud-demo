@@ -13,5 +13,4 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface SchoolService extends IService<School> {
 
-    boolean updateSchool(School school);
 }

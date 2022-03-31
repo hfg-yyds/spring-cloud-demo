@@ -14,9 +14,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @Slf4j
 @SpringBootApplication
 @MapperScan("com.hfg.mapper")
-public class OrderService7001 {
+public class SchoolService7001 {
     public static void main(String[] args) {
         log.info("服务开始启动");
-        SpringApplication.run(OrderService7001.class,args);
+        SpringApplication.run(SchoolService7001.class,args);
     }
 }

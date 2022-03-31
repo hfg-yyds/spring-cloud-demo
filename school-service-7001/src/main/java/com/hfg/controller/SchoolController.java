@@ -36,9 +36,6 @@ public class SchoolController {
     @Resource
     private SchoolMapper schoolMapper;
 
-    @Resource
-    private SchoolService schoolService;
-
     @PostMapping("/insert")
     @ApiOperation(value = "插入一个学校对象")
     public R insert() {
@@ -60,18 +57,14 @@ public class SchoolController {
         int insert = schoolMapper.insert(school);
         System.out.println("insert"+insert);
         System.out.println("学校Id"+school.getSchoolId());
-        if (insert>0)
-            return R.ok().data("test","插入成功");
-        return R.ok().data("test","插入失败");
+        return insert>0?R.ok().data("test","插入成功"):R.ok().data("test","插入失败");
     }
 
     @DeleteMapping("/delete/{id}")
     @ApiOperation(value = "根据id删除一个学校")
     public R delete(@PathVariable String id) {
-        int deleteById = schoolMapper.deleteById(id);
-        if (deleteById>0)
-            return R.ok().data("Results","删除成功");
-        return R.ok().data("Results","删除失败");
+        int i = schoolMapper.deleteById(id);
+        return i>0?R.ok().data("Results","删除成功"):R.ok().data("Results","删除失败");
     }
 
     @GetMapping("/update/{id}")
@@ -81,15 +74,13 @@ public class SchoolController {
         School school = new School();
         school.setSchoolId("1");
         school.setSchoolAge(23);
-        int update = schoolMapper.updateById(school);
-        if (update>0)
-        return R.ok().data("Results","更新成功");
-        return R.ok().data("Results","更新失败");
+        int i = schoolMapper.updateById(school);
+        return i>0?R.ok().data("Results","更新成功"):R.ok().data("Results","更新失败");
     }
 
-    @GetMapping("/getAll")
+    @GetMapping("/getSchoolLists")
     @ApiOperation(value = "得到所有的学校消息")
-    public R getAll() {
+    public R getSchoolLists() {
         QueryWrapper<School> queryWrapper = new QueryWrapper<>();
         List<School> schoolList = schoolMapper.selectList(queryWrapper);
         for (int i = 0; i < schoolList.size(); i++) {

@@ -20,14 +20,4 @@ import org.springframework.stereotype.Service;
 @Service
 public class SchoolServiceImpl extends ServiceImpl<SchoolMapper, School> implements SchoolService {
 
-    @Autowired
-    private BaseMapper<School> baseMapper;
-    @Override
-    public boolean updateSchool(School school) {
-        QueryWrapper<School> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("school_id","1508676782997712897");
-        int update = baseMapper.update(school, queryWrapper);
-        System.out.println(update);
-        return true;
-    }
 }
