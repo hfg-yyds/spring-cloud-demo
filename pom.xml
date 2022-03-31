@@ -13,6 +13,7 @@
         <module>resume-service-8003</module>
         <module>hystrix-turbine-6001</module>
         <module>hystrix-dashboard-6002</module>
+        <module>autodeliver-service-8004</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

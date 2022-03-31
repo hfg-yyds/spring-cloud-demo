@@ -1,0 +1,41 @@
+server:
+  port: 8002
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springcloud?serverTimezone=GMT%2B8
+    password: 123456
+    username: root
+  application:
+    name: autodeliver-service
+  profiles:
+    active: dev  # 环境设置：dev、test、prod
+  jackson: #返回json的全局时间格式
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #mybatisplus日志  --打印sql语句的日志
+  mapper-locations: classpath:com/hfg/mapper/xml/*.xml #配置mapper xml文件的路径
+  type-aliases-package: com.hfg.entities   #别名
+#logging:  ## 设置日志级别
+#  level: info
+
+eureka:
+  client:
+    serviceUrl: # eureka server的路径
+      defaultZone: http://eureka-server9001:9001/eureka/,http://eureka-server9002:9002/eureka/
+      #把 eureka 集群中的所有 url 都填写了进来，也可以只写⼀台，因为各个 eureka server 可以同步注册表
+  instance:
+    #使⽤ip注册，否则会使⽤主机名注册了（此处考虑到对⽼版本的兼容，新版本经过实验都是ip）
+    prefer-ip-address: true
+    #⾃定义实例显示格式，加上版本号，便于多版本管理，注意是ip-address，早期版本是ipAddress
+    instance-id: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}:@project.version@
+
+
+#针对的被调⽤⽅微服务名称,不加就是全局⽣效
+resume-service:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule #负载策略调整

@@ -6,6 +6,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
@@ -18,9 +19,10 @@ import org.springframework.web.client.RestTemplate;
 @Slf4j
 @MapperScan("com.hfg.mapper")
 @EnableDiscoveryClient
-public class AutoDeliverServiceApplication {
+@EnableFeignClients
+public class AutoDeliverService8004 {
     public static void main(String[] args) {
-        SpringApplication.run(AutoDeliverServiceApplication.class,args);
+        SpringApplication.run(AutoDeliverService8004.class,args);
     }
 
     @Bean
