@@ -1,5 +1,5 @@
 server:
-  port: 8002
+  port: 8004
 
 spring:
   datasource:
@@ -35,7 +35,17 @@ eureka:
     instance-id: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}:@project.version@
 
 
-#针对的被调⽤⽅微服务名称,不加就是全局⽣效
 resume-service:
   ribbon:
+    #请求连接超时时间
+    ConnectTimeout: 2000
+    #请求处理超时时间
+    ReadTimeout: 15000
+    #对所有操作都进⾏重试
+    OkToRetryOnAllOperations: true
+    ####根据如上配置，当访问到故障请求的时候，它会再尝试访问⼀次当前实例（次数由MaxAutoRetries配置），
+    ####如果不⾏，就换⼀个实例进⾏访问，如果还不⾏，再换⼀次实例访问（更换次数由MaxAutoRetriesNextServer配置），
+    ####如果依然不⾏，返回失败信息。
+    MaxAutoRetries: 0 #对当前选中实例重试次数，不包括第⼀次调⽤
+    MaxAutoRetriesNextServer: 0 #切换实例的重试次数
     NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule #负载策略调整

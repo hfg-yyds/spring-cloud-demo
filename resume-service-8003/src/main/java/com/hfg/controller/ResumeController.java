@@ -33,6 +33,16 @@ public class ResumeController {
     @Resource
     private ResumeMapper resumeMapper;
 
+    @GetMapping("/testOpenFeignRibbon/{id}")
+    public R testOpenFeignRibbon(@PathVariable String id) {
+        StringBuilder str = new StringBuilder();
+        for (int i = 0; i < 10; i++) {
+            str.append(i);
+        }
+        return R.ok().data("字符串",str).data("port",port);
+    }
+
+
     @SneakyThrows
     @GetMapping("/getResumeList")
     @HystrixCommand(
@@ -81,6 +91,7 @@ public class ResumeController {
     public R fallBackMethod() {
         return R.ok().data("Fallback","服务降级");
     }
+
 
 }
 

@@ -6,6 +6,7 @@ import com.hfg.entity.Resume;
 import com.hfg.mapper.ResumeMapper;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
+import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -31,6 +32,20 @@ public class ResumeController {
     private String port;
     @Resource
     private ResumeMapper resumeMapper;
+
+    @SneakyThrows
+    @GetMapping("/testOpenFeignRibbon/{id}")
+    @HystrixCommand
+    public R testOpenFeignRibbon(@PathVariable String id) {
+
+        StringBuilder str = new StringBuilder();
+        for (int i = 0; i < 10; i++) {
+            str.append(i);
+        }
+        str.append("  "+id);
+        Thread.sleep(50000);
+        return R.ok().data("字符串",str).data("port",port);
+    }
 
     @GetMapping("/getResumeList")
     public R getResumeList() {

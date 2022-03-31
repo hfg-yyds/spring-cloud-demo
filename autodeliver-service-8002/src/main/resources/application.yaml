@@ -20,8 +20,9 @@ mybatis-plus:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #mybatisplus日志  --打印sql语句的日志
   mapper-locations: classpath:com/hfg/mapper/xml/*.xml #配置mapper xml文件的路径
   type-aliases-package: com.hfg.entities   #别名
+
 #logging:  ## 设置日志级别
-#  level: info
+#  level: debug
 
 eureka:
   client:
@@ -38,4 +39,35 @@ eureka:
 #针对的被调⽤⽅微服务名称,不加就是全局⽣效
 resume-service:
   ribbon:
+    #请求连接超时时间
+    ConnectTimeout: 2000
+    #请求处理超时时间
+    ReadTimeout: 15000
+    #对所有操作都进⾏重试
+    OkToRetryOnAllOperations: true
+    ####根据如上配置，当访问到故障请求的时候，它会再尝试访问⼀次当前实例（次数由MaxAutoRetries配置），
+    ####如果不⾏，就换⼀个实例进⾏访问，如果还不⾏，再换⼀次实例访问（更换次数由MaxAutoRetriesNextServer配置），
+    ####如果依然不⾏，返回失败信息。
+    MaxAutoRetries: 0 #对当前选中实例重试次数，不包括第⼀次调⽤
+    MaxAutoRetriesNextServer: 0 #切换实例的重试次数
     NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule #负载策略调整
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+  ##########################################Hystrix的超时时⻓设置
+            timeoutInMilliseconds: 15000
+feign:
+  hystrix:
+    enabled: true
+
+  compression:
+    request:
+      enabled: true # 开启请求压缩
+      mime-types: text/html,application/xml,application/json # 设置压缩的数据类型，此处也是默认值
+      min-request-size: 2048 # 设置触发压缩的⼤⼩下限，此处也是默认值
+    response:
+      enabled: true # 开启响应压缩

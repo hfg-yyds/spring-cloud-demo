@@ -3,6 +3,7 @@ package com.hfg.controller;
 import com.hfg.config.R;
 import com.hfg.feign.ResumeFeign;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -44,5 +45,13 @@ public class AutodeliverController {
     @GetMapping("/getResumeListsByFeign")
     public R getResumeListsByFeign() {
         return resumeFeign.getResumeList();
+    }
+
+
+    @Value("${server.port}")
+    private String port;
+    @GetMapping("/testGateWay")
+    public R testGateWay() {
+        return R.ok().data("port",port).data("routes","路由成功");
     }
 }

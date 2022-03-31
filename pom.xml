@@ -14,6 +14,7 @@
         <module>hystrix-turbine-6001</module>
         <module>hystrix-dashboard-6002</module>
         <module>autodeliver-service-8004</module>
+        <module>gate-way-5001</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -31,11 +32,6 @@
         <spring-cloud.version>Greenwich.SR6</spring-cloud.version>
     </properties>
     <dependencies>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
 
         <dependency>
             <groupId>org.springframework.cloud</groupId>

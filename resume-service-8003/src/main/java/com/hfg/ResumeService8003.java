@@ -19,8 +19,8 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 @EnableDiscoveryClient
 @EnableEurekaClient
 @SpringCloudApplication
-public class ResumeServiceApplication8003 {
+public class ResumeService8003 {
     public static void main(String[] args) {
-        SpringApplication.run(ResumeServiceApplication8003.class,args);
+        SpringApplication.run(ResumeService8003.class,args);
     }
 }
