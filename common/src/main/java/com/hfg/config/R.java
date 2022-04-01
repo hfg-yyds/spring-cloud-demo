@@ -25,11 +25,17 @@ public class R {
     @ApiModelProperty(value = "返回消息")
     private String message;
 
+    /**
+     * 参考使用泛型 而不是使用<String,Object>
+     * private
+     */
     @ApiModelProperty(value = "返回数据")
     private Map<String, Object> data = new HashMap<String, Object>();
 
     //私有化构造方法
-    private R(){}
+    private R(){
+
+    }
 
     //链式编程   R.ok().success()....
 

@@ -47,11 +47,11 @@ public class AutodeliverController {
         return resumeFeign.getResumeList();
     }
 
-
     @Value("${server.port}")
     private String port;
     @GetMapping("/testGateWay")
     public R testGateWay() {
         return R.ok().data("port",port).data("routes","路由成功");
     }
+
 }

@@ -7,9 +7,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 
-import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
-import java.sql.Blob;
 import java.io.Serializable;
 
 import com.baomidou.mybatisplus.annotation.TableName;
@@ -60,7 +58,7 @@ public class School implements Serializable {
     private LocalDateTime schoolDatetime;
 
     @ApiModelProperty(value = "学校图片简介")
-    private String schoolBlob;
+    private byte[] schoolBlob;
 
     @ApiModelProperty(value = "学校文字简介")
     private String schoolClob;

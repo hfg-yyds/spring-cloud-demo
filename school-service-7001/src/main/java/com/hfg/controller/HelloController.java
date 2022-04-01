@@ -12,11 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/hello")
-public class HelloController {
+public class   HelloController {
 
     @GetMapping("/get")
     public R get() {
-
         return R.ok().data("test","Hello,World!");
     }
 

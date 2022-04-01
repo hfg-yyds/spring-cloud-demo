@@ -20,3 +20,5 @@ public class SchoolService7001 {
         SpringApplication.run(SchoolService7001.class,args);
     }
 }
+
+

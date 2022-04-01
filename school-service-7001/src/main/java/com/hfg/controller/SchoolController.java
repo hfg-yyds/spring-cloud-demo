@@ -1,20 +1,23 @@
 package com.hfg.controller;
 
-
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.hfg.config.R;
 import com.hfg.entity.School;
 import com.hfg.entity.SchoolType;
 import com.hfg.mapper.SchoolMapper;
-import com.hfg.service.SchoolService;
+import com.hfg.utils.ImagesUtils;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import lombok.SneakyThrows;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.BufferedInputStream;
+import java.io.FileInputStream;
+import java.io.InputStream;
 import java.math.BigDecimal;
-import java.sql.Blob;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -32,11 +35,11 @@ import java.util.List;
 @RequestMapping("/school")
 @Api(value = "学校测试控制器")
 public class SchoolController {
-
     @Resource
     private SchoolMapper schoolMapper;
 
-    @PostMapping("/insert")
+    @SneakyThrows
+    @PutMapping("/insert")
     @ApiOperation(value = "插入一个学校对象")
     public R insert() {
         School school = new School();
@@ -48,8 +51,9 @@ public class SchoolController {
         school.setSchoolTime(LocalTime.now());
         school.setSchoolDatetime(LocalDateTime.now());
 
-        school.setSchoolBlob("Blsaaaaaaaaaaaaaaaaaaaob");
-        school.setSchoolClob("clob");
+        school.setSchoolBlob(ImagesUtils.getImgStr("D:\\photo.jpg"));
+        school.setSchoolClob(ImagesUtils.getTextStr("D:\\text.txt"));
+
         school.setSchoolEnum(SchoolType.University);
 
         school.setCreateTime(LocalDateTime.now());
@@ -67,7 +71,7 @@ public class SchoolController {
         return i>0?R.ok().data("Results","删除成功"):R.ok().data("Results","删除失败");
     }
 
-    @GetMapping("/update/{id}")
+    @PostMapping("/update/{id}")
     @ApiOperation("根据学校id进行修改")
     public R update(@PathVariable String id) {
         System.out.println("请求进来了");
@@ -85,10 +89,17 @@ public class SchoolController {
         List<School> schoolList = schoolMapper.selectList(queryWrapper);
         for (int i = 0; i < schoolList.size(); i++) {
             School school = schoolList.get(i);
-            String schoolBlob = school.getSchoolBlob();
+            byte[] schoolBlob = school.getSchoolBlob();
             System.out.println(schoolBlob);
         }
         return R.ok().data("schoolList",schoolList);
+    }
+
+    @GetMapping("/error/{id}")
+    public R error(@PathVariable Integer id) {
+        int res ;
+        res = 100/id;
+        return R.ok().data("Result",res);
     }
 
 

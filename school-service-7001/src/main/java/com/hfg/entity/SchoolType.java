@@ -1,6 +1,5 @@
 package com.hfg.entity;
 
-
 /**
  * @Author: Zero
  * @Date: 2022/3/29 11:25
@@ -17,7 +16,6 @@ public enum SchoolType {
     SchoolType(String name) {
         this.name = name;
     }
-
 
     public String getName() {
         return name;
