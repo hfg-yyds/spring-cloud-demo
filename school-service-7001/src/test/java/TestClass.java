@@ -1,3 +1,8 @@
+import cn.hutool.json.JSON;
+import cn.hutool.json.JSONUtil;
+import com.hfg.entity.School;
+import com.hfg.entity.SchoolType;
+import com.hfg.utils.ImagesUtils;
 import lombok.SneakyThrows;
 import org.junit.Test;
 
@@ -118,6 +123,23 @@ public class TestClass {
 
     @Test
     public void test() {
-        System.out.println(LocalTime.now());
+        School school = new School();
+        school.setSchoolAge(123);
+        school.setSchoolMoney(4522232556l);
+        school.setSchoolIncome(new BigDecimal("2.33335554"));
+        school.setSchoolExcellent(true);
+        school.setSchoolDate(LocalDate.now());
+        school.setSchoolTime(LocalTime.now());
+        school.setSchoolDatetime(LocalDateTime.now());
+
+//        school.setSchoolBlob(ImagesUtils.getImgStr("D:\\photo.jpg"));
+//        school.setSchoolClob(ImagesUtils.getTextStr("D:\\text.txt"));
+
+        school.setSchoolEnum(SchoolType.University);
+
+        school.setCreateTime(LocalDateTime.now());
+        school.setUpdateTime(LocalDateTime.now());
+
+        System.out.println(JSONUtil.parse(school));
     }
 }

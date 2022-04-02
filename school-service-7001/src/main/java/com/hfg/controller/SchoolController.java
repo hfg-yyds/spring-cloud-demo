@@ -1,6 +1,9 @@
 package com.hfg.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.github.pagehelper.PageHelper;
 import com.hfg.config.R;
 import com.hfg.entity.School;
 import com.hfg.entity.SchoolType;
@@ -12,11 +15,6 @@ import lombok.SneakyThrows;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
-import java.io.BufferedInputStream;
-import java.io.FileInputStream;
-import java.io.InputStream;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -41,7 +39,8 @@ public class SchoolController {
     @SneakyThrows
     @PutMapping("/insert")
     @ApiOperation(value = "插入一个学校对象")
-    public R insert() {
+    public R insert(@RequestBody School school1) {
+        System.out.println(school1.toString());
         School school = new School();
         school.setSchoolAge(123);
         school.setSchoolMoney(4522232556l);
@@ -82,11 +81,13 @@ public class SchoolController {
         return i>0?R.ok().data("Results","更新成功"):R.ok().data("Results","更新失败");
     }
 
-    @GetMapping("/getSchoolLists")
-    @ApiOperation(value = "得到所有的学校消息")
-    public R getSchoolLists() {
+    @GetMapping("/getSchoolLists/{current}/{size}")
+    @ApiOperation(value = "得到所有的学校消息,使用MP自带分页")
+    public R getSchoolLists(@PathVariable Long current, @PathVariable Long size) {
         QueryWrapper<School> queryWrapper = new QueryWrapper<>();
-        List<School> schoolList = schoolMapper.selectList(queryWrapper);
+        Page<School> schoolPage = new Page<>(current,size);
+        IPage<School> schoolIPage = schoolMapper.selectPage(schoolPage, queryWrapper);
+        List<School> schoolList = schoolIPage.getRecords();
         for (int i = 0; i < schoolList.size(); i++) {
             School school = schoolList.get(i);
             byte[] schoolBlob = school.getSchoolBlob();
@@ -95,12 +96,19 @@ public class SchoolController {
         return R.ok().data("schoolList",schoolList);
     }
 
-    @GetMapping("/error/{id}")
-    public R error(@PathVariable Integer id) {
-        int res ;
-        res = 100/id;
-        return R.ok().data("Result",res);
+    @GetMapping("/getSchoolLists2/{current}/{size}")
+    @ApiOperation(value = "得到所有的学校消息,使用MP自带分页")
+    public R getSchoolLists2(@PathVariable Integer current, @PathVariable Integer size) {
+        PageHelper.startPage(current,size);
+        List<School> schoolList = schoolMapper.selectList(null);
+        for (int i = 0; i < schoolList.size(); i++) {
+            School school = schoolList.get(i);
+            byte[] schoolBlob = school.getSchoolBlob();
+            System.out.println(schoolBlob);
+        }
+        return R.ok().data("schoolList",schoolList);
     }
+
 
 
 }

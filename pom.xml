@@ -15,6 +15,7 @@
         <module>hystrix-dashboard-6002</module>
         <module>autodeliver-service-8004</module>
         <module>gate-way-5001</module>
+        <module>apollo-client-8088</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

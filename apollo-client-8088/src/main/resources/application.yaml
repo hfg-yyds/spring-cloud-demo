@@ -1,0 +1,13 @@
+server:
+  port: 8088
+
+spring:
+  application:
+    name: apollo-client-8088
+
+#AppId是应用的身份信息，是从服务端获取配置的一个重要信息。
+app:
+  id: apollo-client-8088
+apollo:
+  meta: http://121.36.42.17
+#  apollo.meta=http://config-service-url

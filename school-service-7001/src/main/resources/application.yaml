@@ -22,3 +22,16 @@ mybatis-plus:
   type-aliases-package: com.hfg.entities   #别名
 #logging:  ## 设置日志级别
 #  level: info
+
+############## 分页插件PageHelper配置 #############
+  #pagehelper.helper-dialect=mysql
+  #pagehelper.reasonable=true
+  #pagehelper.support-methods-arguments=true
+  #pagehelper.pageSizeZero=true
+  #pagehelper.params=count=countSql
+pagehelper:
+  reasonable: true
+  support-methods-arguments: true
+  page-size-zero: true
+  params: count=countSql
+  helper-dialect: mysql

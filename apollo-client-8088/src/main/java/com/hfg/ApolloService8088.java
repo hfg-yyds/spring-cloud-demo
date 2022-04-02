@@ -1,22 +1,21 @@
 package com.hfg;
 
+import com.ctrip.framework.apollo.spring.annotation.EnableApolloConfig;
 import lombok.extern.slf4j.Slf4j;
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * @Author: Zero
- * @Date: 2022/3/29 09:46
+ * @Date: 2022/4/1 17:06
  * @Description:
  */
-
-@Slf4j
 @SpringBootApplication
-@MapperScan("com.hfg.mapper")
-public class SchoolService7001 {
+@EnableApolloConfig
+@Slf4j
+public class ApolloService8088 {
     public static void main(String[] args) {
-        log.info("服务开始启动");
-        SpringApplication.run(SchoolService7001.class,args);
+        log.info("阿波罗服务开始启动了");
+        SpringApplication.run(ApolloService8088.class,args);
     }
 }
