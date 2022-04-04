@@ -16,6 +16,7 @@
         <module>autodeliver-service-8004</module>
         <module>gate-way-5001</module>
         <module>apollo-client-8088</module>
+        <module>rocketmq-service-4001</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
