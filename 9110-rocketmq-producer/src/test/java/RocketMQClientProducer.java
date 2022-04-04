@@ -12,6 +12,18 @@ import java.util.ArrayList;
  * @Date: 2022/4/4 09:22
  * @Description:
  */
+/**
+ * 消息的常见发生方式
+ *      1、同步消息
+ *      2、异步消息(回调)
+ *      3、单向消息  有可能会丢消息
+ *
+ * RocketMQ发生的消息只能被一个消费者收到
+ * jms存在广播消息
+ * 一个DefaultMQProducer 对象可以发送多次
+ *
+ *
+ */
 public class RocketMQClientProducer {
     @SneakyThrows
     public static void main(String[] args) {
@@ -21,7 +33,6 @@ public class RocketMQClientProducer {
         /**
          * topic 消息将要发送的地址
          * body  消息中的具体数据
-         *
          */
         Message message1 = new Message("mytopic","my name is xxyy1".getBytes(StandardCharsets.UTF_8));
         Message message2 = new Message("mytopic","my name is xxyy2".getBytes(StandardCharsets.UTF_8));

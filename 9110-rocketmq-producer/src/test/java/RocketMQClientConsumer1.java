@@ -4,6 +4,7 @@ import org.apache.rocketmq.client.consumer.listener.ConsumeConcurrentlyContext;
 import org.apache.rocketmq.client.consumer.listener.ConsumeConcurrentlyStatus;
 import org.apache.rocketmq.client.consumer.listener.MessageListenerConcurrently;
 import org.apache.rocketmq.common.message.MessageExt;
+import org.apache.rocketmq.common.protocol.heartbeat.MessageModel;
 
 import java.util.List;
 
@@ -12,16 +13,17 @@ import java.util.List;
  * @Date: 2022/4/4 09:38
  * @Description:
  */
-public class RocketMQClientConsumer {
+
+public class RocketMQClientConsumer1 {
     @SneakyThrows
     public static void main(String[] args) {
-        DefaultMQPushConsumer pushConsumer = new DefaultMQPushConsumer("xxyy");
+        DefaultMQPushConsumer pushConsumer = new DefaultMQPushConsumer("TAG-A-GROUP");
         pushConsumer.setNamesrvAddr("192.168.88.128:9876");
         /**
          * 每一个consumer只能关注一个topic
          * 过滤器
          */
-        pushConsumer.subscribe("mytopic","*");
+        pushConsumer.subscribe("mytopic","TAG-B");
         /**
          * rocketmq接受消息的方式是通过事件监听的方式
          */
@@ -42,8 +44,14 @@ public class RocketMQClientConsumer {
                 return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
             }
         });
+        //消费模式
+        //默认是集群模式  一个消息只能消费一次
+//        pushConsumer.setMessageModel(MessageModel.CLUSTERING); 默认模式
+        //一个消息可以被消费多次
+        pushConsumer.setMessageModel(MessageModel.BROADCASTING);
         pushConsumer.start();
-        pushConsumer.shutdown();
+//        pushConsumer.shutdown();
+        //一个集群一个广播模式  貌似广播模式消息都能收到,集群模式只能收到同步发送的消息  ？
     }
 
 }
