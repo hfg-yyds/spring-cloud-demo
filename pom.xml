@@ -5,18 +5,19 @@
     <packaging>pom</packaging>
     <modules>
         <module>common</module>
-        <module>school-service-7001</module>
-        <module>resume-service-8001</module>
-        <module>autodeliver-service-8002</module>
-        <module>eureka-service-9001</module>
-        <module>eureka-server-9002</module>
-        <module>resume-service-8003</module>
-        <module>hystrix-turbine-6001</module>
-        <module>hystrix-dashboard-6002</module>
-        <module>autodeliver-service-8004</module>
-        <module>gate-way-5001</module>
-        <module>apollo-client-8088</module>
-        <module>rocketmq-service-4001</module>
+        <module>7001-school-service</module>
+        <module>8001-resume-service</module>
+        <module>8002-autodeliver-service</module>
+        <module>9001-eureka-service</module>
+        <module>9002-eureka-server</module>
+        <module>8003-resume-service</module>
+        <module>6001-hystrix-turbine</module>
+        <module>6002-hystrix-dashboard</module>
+        <module>8004-autodeliver-service</module>
+        <module>5001-gate-way</module>
+        <module>9101-apollo-client</module>
+        <module>9110-rocketmq-service</module>
+        <module>9102-apollo-client</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -27,7 +28,7 @@
     <groupId>com.hfg</groupId>
     <artifactId>spring-cloud-demo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>scn</name>
+    <name>spring-cloud-demo</name>
     <description>Demo project for Spring Boot</description>
     <properties>
         <java.version>1.8</java.version>
