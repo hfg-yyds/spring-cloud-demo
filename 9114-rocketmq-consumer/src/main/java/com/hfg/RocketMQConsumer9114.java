@@ -14,6 +14,7 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 @Slf4j
 public class RocketMQConsumer9114 {
     public static void main(String[] args) {
+        log.info("RocketMQ消费者启动了！");
         SpringApplication.run(RocketMQConsumer9114.class,args);
     }
 }
