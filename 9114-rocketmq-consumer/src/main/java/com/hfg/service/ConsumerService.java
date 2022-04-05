@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author Zero
  * @since 2022-04-04
  */
-public interface ConsumerService extends IService<Consumer> {
+public interface ConsumerService extends IService<Consumer>  {
 
 }

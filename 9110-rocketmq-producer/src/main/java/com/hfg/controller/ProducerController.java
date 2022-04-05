@@ -25,7 +25,7 @@ import java.util.List;
 @Slf4j
 public class ProducerController {
 
-    @Resource(name = "producer")
+    @Resource
     private DefaultMQProducer producer;
 
     @SneakyThrows

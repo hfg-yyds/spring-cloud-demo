@@ -1,22 +1,19 @@
 package com.hfg;
 
 import lombok.extern.slf4j.Slf4j;
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-
 /**
  * @Author: Zero
- * @Date: 2022/4/4 12:46
+ * @Date: 2022/4/5 21:24
  * @Description:
  */
 @SpringBootApplication
 @Slf4j
-@MapperScan("com.hfg.mapper")
-public class RocketMQConsumer9114 {
+public class AuthorizationService9004 {
     public static void main(String[] args) {
-        log.info("RocketMQ消费者启动了！");
-        SpringApplication.run(RocketMQConsumer9114.class,args);
+        log.info("认证服务启动了,负责颁发token");
+        SpringApplication.run(AuthorizationService9004.class,args);
     }
 }

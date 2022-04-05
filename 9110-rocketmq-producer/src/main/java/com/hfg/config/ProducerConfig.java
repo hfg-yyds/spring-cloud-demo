@@ -13,13 +13,13 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 public class ProducerConfig {
-    @SneakyThrows
-    @Bean(name = "producer")
-    public DefaultMQProducer getMqProducer() {
-        DefaultMQProducer mqProducer = new DefaultMQProducer("producer");
-        mqProducer.setNamesrvAddr("192.168.88.128:9876");
-        mqProducer.start();
-        return mqProducer;
-    }
+//    @SneakyThrows
+//    @Bean(name = "producer")
+//    public DefaultMQProducer getMqProducer() {
+//        DefaultMQProducer mqProducer = new DefaultMQProducer("producer");
+//        mqProducer.setNamesrvAddr("192.168.88.128:9876");
+//        mqProducer.start();
+//        return mqProducer;
+//    }
 
 }

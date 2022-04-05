@@ -2,19 +2,15 @@ package com.hfg.controller;
 
 import com.hfg.config.R;
 import lombok.SneakyThrows;
-import org.apache.rocketmq.client.consumer.DefaultMQPushConsumer;
-import org.apache.rocketmq.client.consumer.listener.ConsumeConcurrentlyContext;
-import org.apache.rocketmq.client.consumer.listener.ConsumeConcurrentlyStatus;
-import org.apache.rocketmq.client.consumer.listener.MessageListenerConcurrently;
-import org.apache.rocketmq.common.message.MessageExt;
+import org.apache.rocketmq.client.consumer.DefaultLitePullConsumer;
+import org.apache.rocketmq.common.message.MessageQueue;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Collection;
 
 /**
  * @Author: Zero
@@ -26,14 +22,20 @@ import java.util.List;
 public class ConsumerController {
 
     @Resource(name = "consumer")
-    private DefaultMQPushConsumer pushConsumer;
+    private DefaultLitePullConsumer pullConsumer;
+
+    Integer count = 0;
 
     @SneakyThrows
     @GetMapping("/getMessage/{topic}")
     public R getMessage(@PathVariable String topic) {
         System.out.println("请求进来了");
-
+        Collection<MessageQueue> messageQueues = pullConsumer.fetchMessageQueues(topic);
+        for (MessageQueue messageQueue : messageQueues) {
+            String queueTopic = messageQueue.getTopic();
+        }
         System.out.println("请求出去了");
         return R.ok().data("msgsList","msgsList");
     }
+
 }

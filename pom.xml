@@ -19,6 +19,7 @@
         <module>9110-rocketmq-producer</module>
         <module>9102-apollo-client</module>
         <module>9114-rocketmq-consumer</module>
+        <module>9004-authorization-service</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
