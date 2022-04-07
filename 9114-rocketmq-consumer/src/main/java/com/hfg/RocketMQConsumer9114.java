@@ -18,5 +18,6 @@ public class RocketMQConsumer9114 {
     public static void main(String[] args) {
         log.info("RocketMQ消费者启动了！");
         SpringApplication.run(RocketMQConsumer9114.class,args);
+//master
     }
 }
