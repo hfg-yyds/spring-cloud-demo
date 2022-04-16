@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/5001-gate-way/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/6001-hystrix-turbine/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/6002-hystrix-dashboard/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/7001-school-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/8001-resume-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/8002-autodeliver-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/8003-resume-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/8004-autodeliver-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/9001-eureka-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/9002-eureka-server/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/9004-authorization-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/9101-apollo-client/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/9110-rocketmq-producer/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/9114-rocketmq-consumer/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common/src/main/java" charset="UTF-8" />
+  </component>
+</project>
