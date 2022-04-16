@@ -1,6 +1,6 @@
 package com.hfg.feign;
 
-import com.hfg.config.R;
+import com.hfg.config.RResult;
 import org.springframework.stereotype.Component;
 
 /**
@@ -12,12 +12,12 @@ import org.springframework.stereotype.Component;
 public class FallBackResume implements ResumeFeign {
 
     @Override
-    public R getResumeList() {
-        return R.ok().data("客户端降级回退","getResumeList");
+    public RResult getResumeList() {
+        return RResult.ok().data("客户端降级回退","getResumeList");
     }
 
     @Override
-    public R testOpenFeignRibbon(String id) {
-        return R.ok().data("客户端降级回退","testOpenFeignRibbon");
+    public RResult testOpenFeignRibbon(String id) {
+        return RResult.ok().data("客户端降级回退","testOpenFeignRibbon");
     }
 }

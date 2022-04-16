@@ -2,21 +2,21 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/5001-gate-way/5001-gate-way.iml" filepath="$PROJECT_DIR$/5001-gate-way/5001-gate-way.iml" />
+      <module fileurl="file://$PROJECT_DIR$/6001-hystrix-turbine/6001-hystrix-turbine.iml" filepath="$PROJECT_DIR$/6001-hystrix-turbine/6001-hystrix-turbine.iml" />
+      <module fileurl="file://$PROJECT_DIR$/6002-hystrix-dashboard/6002-hystrix-dashboard.iml" filepath="$PROJECT_DIR$/6002-hystrix-dashboard/6002-hystrix-dashboard.iml" />
+      <module fileurl="file://$PROJECT_DIR$/7001-school-service/7001-school-service.iml" filepath="$PROJECT_DIR$/7001-school-service/7001-school-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/8001-resume-service/8001-resume-service.iml" filepath="$PROJECT_DIR$/8001-resume-service/8001-resume-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/8002-autodeliver-service/8002-autodeliver-service.iml" filepath="$PROJECT_DIR$/8002-autodeliver-service/8002-autodeliver-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/8003-resume-service/8003-resume-service.iml" filepath="$PROJECT_DIR$/8003-resume-service/8003-resume-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/8004-autodeliver-service/8004-autodeliver-service.iml" filepath="$PROJECT_DIR$/8004-autodeliver-service/8004-autodeliver-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/9001-eureka-service/9001-eureka-service.iml" filepath="$PROJECT_DIR$/9001-eureka-service/9001-eureka-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/9002-eureka-server/9002-eureka-server.iml" filepath="$PROJECT_DIR$/9002-eureka-server/9002-eureka-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/9004-authorization-service/9004-authorization-service.iml" filepath="$PROJECT_DIR$/9004-authorization-service/9004-authorization-service.iml" />
-      <module fileurl="file://$PROJECT_DIR$/9114-rocketmq-consumer/9114-rocketmq-consumer.iml" filepath="$PROJECT_DIR$/9114-rocketmq-consumer/9114-rocketmq-consumer.iml" />
-      <module fileurl="file://$PROJECT_DIR$/9101-apollo-client/apollo-client-8088.iml" filepath="$PROJECT_DIR$/9101-apollo-client/apollo-client-8088.iml" />
-      <module fileurl="file://$PROJECT_DIR$/8002-autodeliver-service/autodeliver-service-8002.iml" filepath="$PROJECT_DIR$/8002-autodeliver-service/autodeliver-service-8002.iml" />
-      <module fileurl="file://$PROJECT_DIR$/8004-autodeliver-service/autodeliver-service-8004.iml" filepath="$PROJECT_DIR$/8004-autodeliver-service/autodeliver-service-8004.iml" />
+      <module fileurl="file://$PROJECT_DIR$/9007-apollo-client/9007-apollo-client.iml" filepath="$PROJECT_DIR$/9007-apollo-client/9007-apollo-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/9010-rocketmq-producer/9010-rocketmq-producer.iml" filepath="$PROJECT_DIR$/9010-rocketmq-producer/9010-rocketmq-producer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/9013-rocketmq-consumer/9013-rocketmq-consumer.iml" filepath="$PROJECT_DIR$/9013-rocketmq-consumer/9013-rocketmq-consumer.iml" />
       <module fileurl="file://$PROJECT_DIR$/common/common.iml" filepath="$PROJECT_DIR$/common/common.iml" />
-      <module fileurl="file://$PROJECT_DIR$/9002-eureka-server/eureka-server-9002.iml" filepath="$PROJECT_DIR$/9002-eureka-server/eureka-server-9002.iml" />
-      <module fileurl="file://$PROJECT_DIR$/9001-eureka-service/eureka-service-9001.iml" filepath="$PROJECT_DIR$/9001-eureka-service/eureka-service-9001.iml" />
-      <module fileurl="file://$PROJECT_DIR$/5001-gate-way/gate-way-5001.iml" filepath="$PROJECT_DIR$/5001-gate-way/gate-way-5001.iml" />
-      <module fileurl="file://$PROJECT_DIR$/6002-hystrix-dashboard/hystrix-dashboard-6002.iml" filepath="$PROJECT_DIR$/6002-hystrix-dashboard/hystrix-dashboard-6002.iml" />
-      <module fileurl="file://$PROJECT_DIR$/6001-hystrix-turbine/hystrix-turbine-6001.iml" filepath="$PROJECT_DIR$/6001-hystrix-turbine/hystrix-turbine-6001.iml" />
-      <module fileurl="file://$PROJECT_DIR$/7001-school-service/order-service-7001.iml" filepath="$PROJECT_DIR$/7001-school-service/order-service-7001.iml" />
-      <module fileurl="file://$PROJECT_DIR$/8001-resume-service/resume-service-8001.iml" filepath="$PROJECT_DIR$/8001-resume-service/resume-service-8001.iml" />
-      <module fileurl="file://$PROJECT_DIR$/8003-resume-service/resume-service-8003.iml" filepath="$PROJECT_DIR$/8003-resume-service/resume-service-8003.iml" />
-      <module fileurl="file://$PROJECT_DIR$/9110-rocketmq-producer/rocketmq-service-4001.iml" filepath="$PROJECT_DIR$/9110-rocketmq-producer/rocketmq-service-4001.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-cloud-demo.iml" filepath="$PROJECT_DIR$/spring-cloud-demo.iml" />
     </modules>
   </component>

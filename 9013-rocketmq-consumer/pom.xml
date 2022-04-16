@@ -9,34 +9,25 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>8003-resume-service</artifactId>
+    <artifactId>9013-rocketmq-consumer</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
+
     <dependencies>
 
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
+            <groupId>org.apache.rocketmq</groupId>
+            <artifactId>rocketmq-spring-boot-starter</artifactId>
+            <version>2.2.1</version>
         </dependency>
 
         <dependency>
             <groupId>com.hfg</groupId>
             <artifactId>common</artifactId>
             <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-        </dependency>
-
-        <!--熔断器Hystrix-->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
         </dependency>
 
     </dependencies>

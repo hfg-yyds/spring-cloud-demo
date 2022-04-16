@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>hystrix-turbine-6001</artifactId>
+    <artifactId>6001-hystrix-turbine</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>

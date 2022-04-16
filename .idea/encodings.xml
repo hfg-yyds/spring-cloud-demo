@@ -12,9 +12,9 @@
     <file url="file://$PROJECT_DIR$/9001-eureka-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/9002-eureka-server/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/9004-authorization-service/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/9101-apollo-client/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/9110-rocketmq-producer/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/9114-rocketmq-consumer/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/9007-apollo-client/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/9010-rocketmq-producer/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/9013-rocketmq-consumer/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/common/src/main/java" charset="UTF-8" />
   </component>
 </project>

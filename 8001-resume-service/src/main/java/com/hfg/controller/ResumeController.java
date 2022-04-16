@@ -1,7 +1,7 @@
 package com.hfg.controller;
 
 
-import com.hfg.config.R;
+import com.hfg.config.RResult;
 import com.hfg.entity.Resume;
 import com.hfg.mapper.ResumeMapper;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
@@ -36,7 +36,7 @@ public class ResumeController {
     @SneakyThrows
     @GetMapping("/testOpenFeignRibbon/{id}")
     @HystrixCommand
-    public R testOpenFeignRibbon(@PathVariable String id) {
+    public RResult testOpenFeignRibbon(@PathVariable String id) {
 
         StringBuilder str = new StringBuilder();
         for (int i = 0; i < 10; i++) {
@@ -44,13 +44,13 @@ public class ResumeController {
         }
         str.append("  "+id);
         Thread.sleep(50000);
-        return R.ok().data("字符串",str).data("port",port);
+        return RResult.ok().data("字符串",str).data("port",port);
     }
 
     @GetMapping("/getResumeList")
-    public R getResumeList() {
+    public RResult getResumeList() {
         List<Resume> resumeList = resumeMapper.selectList(null);
-        return R.ok().data("resumeList",resumeList).data("port",port);
+        return RResult.ok().data("resumeList",resumeList).data("port",port);
     }
 
     @HystrixCommand(
@@ -63,8 +63,8 @@ public class ResumeController {
             fallbackMethod = "fallBackMethod"
 
     )
-    public R testHystrix() {
-        return R.ok().data("Results","返回结果,测试正常");
+    public RResult testHystrix() {
+        return RResult.ok().data("Results","返回结果,测试正常");
     }
 
 }

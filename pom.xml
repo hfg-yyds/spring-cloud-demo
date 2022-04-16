@@ -15,10 +15,9 @@
         <module>6002-hystrix-dashboard</module>
         <module>8004-autodeliver-service</module>
         <module>5001-gate-way</module>
-        <module>9101-apollo-client</module>
-        <module>9110-rocketmq-producer</module>
-        <module>9102-apollo-client</module>
-        <module>9114-rocketmq-consumer</module>
+        <module>9007-apollo-client</module>
+        <module>9010-rocketmq-producer</module>
+        <module>9013-rocketmq-consumer</module>
         <module>9004-authorization-service</module>
     </modules>
     <parent>

@@ -1,6 +1,6 @@
 package com.hfg.feign;
 
-import com.hfg.config.R;
+import com.hfg.config.RResult;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -14,5 +14,5 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public interface ResumeFeign {
 
     @RequestMapping(value = "/resume/getResumeList",method = RequestMethod.GET)
-    public R getResumeList();
+    public RResult getResumeList();
 }

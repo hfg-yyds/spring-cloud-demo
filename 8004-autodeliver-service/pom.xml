@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>autodeliver-service-8004</artifactId>
+    <artifactId>8004-autodeliver-service</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>

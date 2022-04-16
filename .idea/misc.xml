@@ -4,12 +4,10 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/9007-apollo-client/pom.xml" />
+        <option value="$PROJECT_DIR$/9010-rocketmq-producer/pom.xml" />
+        <option value="$PROJECT_DIR$/9013-rocketmq-consumer/pom.xml" />
       </list>
-    </option>
-    <option name="ignoredFiles">
-      <set>
-        <option value="$PROJECT_DIR$/9102-apollo-client/pom.xml" />
-      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK" />

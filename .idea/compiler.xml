@@ -2,66 +2,67 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="hystrix-dashboard-6002" />
         <module name="9004-authorization-service" />
-        <module name="gate-way-5001" />
-        <module name="resume-service-8001" />
-        <module name="resume-service-8003" />
-        <module name="order-service-7001" />
-        <module name="hystrix-turbine-6001" />
-        <module name="autodeliver-service-8004" />
-        <module name="autodeliver-service-8002" />
-        <module name="eureka-service-9001" />
+        <module name="9002-eureka-server" />
+        <module name="9007-apollo-client" />
+        <module name="9001-eureka-service" />
+        <module name="6001-hystrix-turbine" />
+        <module name="8002-autodeliver-service" />
+        <module name="8003-resume-service" />
+        <module name="5001-gate-way" />
+        <module name="6002-hystrix-dashboard" />
+        <module name="7001-school-service" />
+        <module name="8004-autodeliver-service" />
         <module name="common" />
-        <module name="apollo-client-8088" />
-        <module name="eureka-server-9002" />
-        <module name="9114-rocketmq-consumer" />
-        <module name="rocketmq-service-4001" />
+        <module name="8001-resume-service" />
+        <module name="9010-rocketmq-producer" />
+        <module name="9013-rocketmq-consumer" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
+      <module name="5001-gate-way" target="8" />
+      <module name="6001-hystrix-turbine" target="8" />
+      <module name="6002-hystrix-dashboard" target="8" />
+      <module name="7001-school-service" target="8" />
+      <module name="8001-resume-service" target="8" />
+      <module name="8002-autodeliver-service" target="8" />
+      <module name="8003-resume-service" target="8" />
+      <module name="8004-autodeliver-service" target="8" />
+      <module name="9001-eureka-service" target="8" />
+      <module name="9002-eureka-server" target="8" />
       <module name="9004-authorization-service" target="8" />
-      <module name="9114-rocketmq-consumer" target="8" />
+      <module name="9007-apollo-client" target="8" />
+      <module name="9010-rocketmq-producer" target="8" />
+      <module name="9013-rocketmq-consumer" target="8" />
       <module name="apollo-clent-8089" target="8" />
-      <module name="apollo-client-8088" target="8" />
-      <module name="autodeliver-service-8002" target="8" />
-      <module name="autodeliver-service-8004" target="8" />
       <module name="common" target="8" />
-      <module name="eureka-server-9002" target="8" />
-      <module name="eureka-service-9001" target="8" />
-      <module name="gate-way-5001" target="8" />
-      <module name="hystrix-dashboard-6002" target="8" />
-      <module name="hystrix-turbine-6001" target="8" />
-      <module name="order-service-7001" target="8" />
-      <module name="resume-service-8001" target="8" />
-      <module name="resume-service-8003" target="8" />
-      <module name="rocketmq-service-4001" target="8" />
       <module name="spring-cloud-demo" target="8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="PREFER_TARGET_JDK_COMPILER" value="false" />
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="5001-gate-way" options="-parameters" />
+      <module name="6001-hystrix-turbine" options="-parameters" />
+      <module name="6002-hystrix-dashboard" options="-parameters" />
+      <module name="7001-school-service" options="-parameters" />
+      <module name="8001-resume-service" options="-parameters" />
+      <module name="8002-autodeliver-service" options="-parameters" />
+      <module name="8003-resume-service" options="-parameters" />
+      <module name="8004-autodeliver-service" options="-parameters" />
+      <module name="9001-eureka-service" options="-parameters" />
+      <module name="9002-eureka-server" options="-parameters" />
       <module name="9004-authorization-service" options="-parameters" />
-      <module name="9114-rocketmq-consumer" options="-parameters" />
+      <module name="9007-apollo-client" options="-parameters" />
+      <module name="9010-rocketmq-producer" options="-parameters" />
+      <module name="9013-rocketmq-consumer" options="-parameters" />
       <module name="apollo-clent-8089" options="-parameters" />
-      <module name="apollo-client-8088" options="-parameters" />
-      <module name="autodeliver-service-8002" options="-parameters" />
-      <module name="autodeliver-service-8004" options="-parameters" />
       <module name="common" options="-parameters" />
-      <module name="eureka-server-9002" options="-parameters" />
-      <module name="eureka-service-9001" options="-parameters" />
-      <module name="gate-way-5001" options="-parameters" />
-      <module name="hystrix-dashboard-6002" options="-parameters" />
-      <module name="hystrix-turbine-6001" options="-parameters" />
-      <module name="order-service-7001" options="-parameters" />
-      <module name="resume-service-8001" options="-parameters" />
-      <module name="resume-service-8003" options="-parameters" />
-      <module name="rocketmq-service-4001" options="-parameters" />
     </option>
   </component>
 </project>

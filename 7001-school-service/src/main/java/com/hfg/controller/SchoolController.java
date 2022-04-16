@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.github.pagehelper.PageHelper;
-import com.hfg.config.R;
+import com.hfg.config.RResult;
 import com.hfg.entity.School;
 import com.hfg.entity.SchoolType;
 import com.hfg.mapper.SchoolMapper;
@@ -39,7 +39,7 @@ public class SchoolController {
     @SneakyThrows
     @PutMapping("/insert")
     @ApiOperation(value = "插入一个学校对象")
-    public R insert(@RequestBody School school1) {
+    public RResult insert(@RequestBody School school1) {
         System.out.println(school1.toString());
         School school = new School();
         school.setSchoolAge(123);
@@ -60,30 +60,30 @@ public class SchoolController {
         int insert = schoolMapper.insert(school);
         System.out.println("insert"+insert);
         System.out.println("学校Id"+school.getSchoolId());
-        return insert>0?R.ok().data("test","插入成功"):R.ok().data("test","插入失败");
+        return insert>0? RResult.ok().data("test","插入成功"): RResult.ok().data("test","插入失败");
     }
 
     @DeleteMapping("/delete/{id}")
     @ApiOperation(value = "根据id删除一个学校")
-    public R delete(@PathVariable String id) {
+    public RResult delete(@PathVariable String id) {
         int i = schoolMapper.deleteById(id);
-        return i>0?R.ok().data("Results","删除成功"):R.ok().data("Results","删除失败");
+        return i>0? RResult.ok().data("Results","删除成功"): RResult.ok().data("Results","删除失败");
     }
 
     @PostMapping("/update/{id}")
     @ApiOperation("根据学校id进行修改")
-    public R update(@PathVariable String id) {
+    public RResult update(@PathVariable String id) {
         System.out.println("请求进来了");
         School school = new School();
         school.setSchoolId("1");
         school.setSchoolAge(23);
         int i = schoolMapper.updateById(school);
-        return i>0?R.ok().data("Results","更新成功"):R.ok().data("Results","更新失败");
+        return i>0? RResult.ok().data("Results","更新成功"): RResult.ok().data("Results","更新失败");
     }
 
     @GetMapping("/getSchoolLists/{current}/{size}")
     @ApiOperation(value = "得到所有的学校消息,使用MP自带分页")
-    public R getSchoolLists(@PathVariable Long current, @PathVariable Long size) {
+    public RResult getSchoolLists(@PathVariable Long current, @PathVariable Long size) {
         QueryWrapper<School> queryWrapper = new QueryWrapper<>();
         Page<School> schoolPage = new Page<>(current,size);
         IPage<School> schoolIPage = schoolMapper.selectPage(schoolPage, queryWrapper);
@@ -93,12 +93,12 @@ public class SchoolController {
             byte[] schoolBlob = school.getSchoolBlob();
             System.out.println(schoolBlob);
         }
-        return R.ok().data("schoolList",schoolList);
+        return RResult.ok().data("schoolList",schoolList);
     }
 
     @GetMapping("/getSchoolLists2/{current}/{size}")
     @ApiOperation(value = "得到所有的学校消息,使用MP自带分页")
-    public R getSchoolLists2(@PathVariable Integer current, @PathVariable Integer size) {
+    public RResult getSchoolLists2(@PathVariable Integer current, @PathVariable Integer size) {
         PageHelper.startPage(current,size);
         List<School> schoolList = schoolMapper.selectList(null);
         for (int i = 0; i < schoolList.size(); i++) {
@@ -106,7 +106,7 @@ public class SchoolController {
             byte[] schoolBlob = school.getSchoolBlob();
             System.out.println(schoolBlob);
         }
-        return R.ok().data("schoolList",schoolList);
+        return RResult.ok().data("schoolList",schoolList);
     }
 
 
