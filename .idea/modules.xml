@@ -16,6 +16,7 @@
       <module fileurl="file://$PROJECT_DIR$/9007-apollo-client/9007-apollo-client.iml" filepath="$PROJECT_DIR$/9007-apollo-client/9007-apollo-client.iml" />
       <module fileurl="file://$PROJECT_DIR$/9010-rocketmq-producer/9010-rocketmq-producer.iml" filepath="$PROJECT_DIR$/9010-rocketmq-producer/9010-rocketmq-producer.iml" />
       <module fileurl="file://$PROJECT_DIR$/9013-rocketmq-consumer/9013-rocketmq-consumer.iml" filepath="$PROJECT_DIR$/9013-rocketmq-consumer/9013-rocketmq-consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/9016-redis-service/9016-redis-service.iml" filepath="$PROJECT_DIR$/9016-redis-service/9016-redis-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/common/common.iml" filepath="$PROJECT_DIR$/common/common.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-cloud-demo.iml" filepath="$PROJECT_DIR$/spring-cloud-demo.iml" />
     </modules>
