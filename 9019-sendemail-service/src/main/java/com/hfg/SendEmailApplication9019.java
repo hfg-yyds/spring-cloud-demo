@@ -1,22 +1,18 @@
 package com.hfg;
 
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
 /**
  * @Author: Zero
- * @Date: 2022/4/1 17:06
+ * @Date: 2022/4/18 01:20
  * @Description:
  */
 @SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
-@Slf4j
-public class ApolloService8088 {
+public class SendEmailApplication9019 {
 
     public static void main(String[] args) {
-        log.info("阿波罗服务开始启动了");
-        SpringApplication.run(ApolloService8088.class,args);
+        SpringApplication.run(SendEmailApplication9019.class,args);
     }
-
 }

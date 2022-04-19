@@ -7,6 +7,8 @@
         <option value="$PROJECT_DIR$/9007-apollo-client/pom.xml" />
         <option value="$PROJECT_DIR$/9010-rocketmq-producer/pom.xml" />
         <option value="$PROJECT_DIR$/9013-rocketmq-consumer/pom.xml" />
+        <option value="$PROJECT_DIR$/xxl-job-admin/pom.xml" />
+        <option value="$PROJECT_DIR$/5005-xxl-job-admin/pom.xml" />
       </list>
     </option>
   </component>

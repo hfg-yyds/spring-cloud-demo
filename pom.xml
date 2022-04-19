@@ -5,6 +5,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>common</module>
+        <module>5005-xxl-job-admin</module>
         <module>7001-school-service</module>
         <module>8001-resume-service</module>
         <module>8002-autodeliver-service</module>
@@ -20,6 +21,7 @@
         <module>9013-rocketmq-consumer</module>
         <module>9004-authorization-service</module>
         <module>9016-redis-service</module>
+        <module>9019-sendemail-service</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

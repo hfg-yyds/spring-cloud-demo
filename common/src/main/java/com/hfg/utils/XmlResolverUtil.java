@@ -6,6 +6,7 @@ import org.dom4j.*;
 import org.dom4j.io.OutputFormat;
 import org.dom4j.io.SAXReader;
 import org.dom4j.io.XMLWriter;
+import org.testng.annotations.Test;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -150,7 +151,10 @@ public class XmlResolverUtil {
         }
         return xmlString;
     }
+    @Test
+    public void test() {
 
+    }
     /**
      * 去掉document文件的空行
      * @param document 文档对象

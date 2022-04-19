@@ -7,17 +7,19 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="5005-xxl-job-admin" />
         <module name="9004-authorization-service" />
         <module name="9002-eureka-server" />
-        <module name="9007-apollo-client" />
         <module name="9001-eureka-service" />
-        <module name="6001-hystrix-turbine" />
+        <module name="9007-apollo-client" />
         <module name="8002-autodeliver-service" />
+        <module name="6001-hystrix-turbine" />
         <module name="8003-resume-service" />
         <module name="5001-gate-way" />
         <module name="6002-hystrix-dashboard" />
-        <module name="7001-school-service" />
+        <module name="9019-sendemail-service" />
         <module name="9016-redis-service" />
+        <module name="7001-school-service" />
         <module name="8004-autodeliver-service" />
         <module name="common" />
         <module name="8001-resume-service" />
@@ -27,6 +29,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
       <module name="5001-gate-way" target="8" />
+      <module name="5005-xxl-job-admin" target="8" />
       <module name="6001-hystrix-turbine" target="8" />
       <module name="6002-hystrix-dashboard" target="8" />
       <module name="7001-school-service" target="8" />
@@ -41,6 +44,7 @@
       <module name="9010-rocketmq-producer" target="8" />
       <module name="9013-rocketmq-consumer" target="8" />
       <module name="9016-redis-service" target="8" />
+      <module name="9019-sendemail-service" target="8" />
       <module name="apollo-clent-8089" target="8" />
       <module name="common" target="8" />
       <module name="spring-cloud-demo" target="8" />
@@ -64,6 +68,7 @@
       <module name="9010-rocketmq-producer" options="-parameters" />
       <module name="9013-rocketmq-consumer" options="-parameters" />
       <module name="9016-redis-service" options="-parameters" />
+      <module name="9019-sendemail-service" options="-parameters" />
       <module name="apollo-clent-8089" options="-parameters" />
       <module name="common" options="-parameters" />
     </option>

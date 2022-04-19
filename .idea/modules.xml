@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/5001-gate-way/5001-gate-way.iml" filepath="$PROJECT_DIR$/5001-gate-way/5001-gate-way.iml" />
+      <module fileurl="file://$PROJECT_DIR$/5005-xxl-job-admin/5005-xxl-job-admin.iml" filepath="$PROJECT_DIR$/5005-xxl-job-admin/5005-xxl-job-admin.iml" />
       <module fileurl="file://$PROJECT_DIR$/6001-hystrix-turbine/6001-hystrix-turbine.iml" filepath="$PROJECT_DIR$/6001-hystrix-turbine/6001-hystrix-turbine.iml" />
       <module fileurl="file://$PROJECT_DIR$/6002-hystrix-dashboard/6002-hystrix-dashboard.iml" filepath="$PROJECT_DIR$/6002-hystrix-dashboard/6002-hystrix-dashboard.iml" />
       <module fileurl="file://$PROJECT_DIR$/7001-school-service/7001-school-service.iml" filepath="$PROJECT_DIR$/7001-school-service/7001-school-service.iml" />
@@ -17,6 +18,7 @@
       <module fileurl="file://$PROJECT_DIR$/9010-rocketmq-producer/9010-rocketmq-producer.iml" filepath="$PROJECT_DIR$/9010-rocketmq-producer/9010-rocketmq-producer.iml" />
       <module fileurl="file://$PROJECT_DIR$/9013-rocketmq-consumer/9013-rocketmq-consumer.iml" filepath="$PROJECT_DIR$/9013-rocketmq-consumer/9013-rocketmq-consumer.iml" />
       <module fileurl="file://$PROJECT_DIR$/9016-redis-service/9016-redis-service.iml" filepath="$PROJECT_DIR$/9016-redis-service/9016-redis-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/9019-sendemail-service/9019-sendemail-service.iml" filepath="$PROJECT_DIR$/9019-sendemail-service/9019-sendemail-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/common/common.iml" filepath="$PROJECT_DIR$/common/common.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-cloud-demo.iml" filepath="$PROJECT_DIR$/spring-cloud-demo.iml" />
     </modules>
