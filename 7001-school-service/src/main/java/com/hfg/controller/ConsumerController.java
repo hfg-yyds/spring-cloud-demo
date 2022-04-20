@@ -1,6 +1,8 @@
 package com.hfg.controller;
 
 
+import cn.hutool.core.date.DateUtil;
+import cn.hutool.core.date.LocalDateTimeUtil;
 import cn.hutool.core.io.file.FileReader;
 import com.hfg.config.RResult;
 import com.hfg.entity.Consumer;
@@ -11,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 /**
@@ -37,8 +41,10 @@ public class ConsumerController {
             Consumer consumer = new Consumer();
             consumer.setId(split[0]);
             consumer.setMessage(split[1]);
+            consumer.setLocalDateTime(LocalDateTimeUtil.parse("2022-04-20"));
             list.add(consumer);
         }
+
         for (Consumer consumer : list) {
             consumerMapper.insert(consumer);
         }

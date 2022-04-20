@@ -1,14 +1,25 @@
 package com.hfg.config;
-
+import lombok.Getter;
 
 /**
- * Create with Intellij IDEA.
- * Description：
- * User:Zero
- * Date:2021/7/30
- * Time:23:29
+ * @Author: Zero
+ * @Date: 2022/4/20 08:30
+ * @Description:
  */
-public interface ResultCode {
-    public static Integer SUCCESS = 20000;
-    public static Integer ERROR = 20001;
+
+@Getter
+public enum ResultCode {
+    SUCCESS("000000", "成功"),
+    DEFAULT_ERROR("400000", "业务错误");
+
+    private final String code;
+
+    private final String message;
+
+    ResultCode(String code, String msg){
+        this.code = code;
+        this.message = msg;
+    }
+
 }
+

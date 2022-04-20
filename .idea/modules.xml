@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/10001-mapstruct/10001-mapstruct.iml" filepath="$PROJECT_DIR$/10001-mapstruct/10001-mapstruct.iml" />
       <module fileurl="file://$PROJECT_DIR$/5001-gate-way/5001-gate-way.iml" filepath="$PROJECT_DIR$/5001-gate-way/5001-gate-way.iml" />
       <module fileurl="file://$PROJECT_DIR$/5005-xxl-job-admin/5005-xxl-job-admin.iml" filepath="$PROJECT_DIR$/5005-xxl-job-admin/5005-xxl-job-admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/5007-xxl-job-executor/5007-xxl-job-executor.iml" filepath="$PROJECT_DIR$/5007-xxl-job-executor/5007-xxl-job-executor.iml" />
       <module fileurl="file://$PROJECT_DIR$/6001-hystrix-turbine/6001-hystrix-turbine.iml" filepath="$PROJECT_DIR$/6001-hystrix-turbine/6001-hystrix-turbine.iml" />
       <module fileurl="file://$PROJECT_DIR$/6002-hystrix-dashboard/6002-hystrix-dashboard.iml" filepath="$PROJECT_DIR$/6002-hystrix-dashboard/6002-hystrix-dashboard.iml" />
       <module fileurl="file://$PROJECT_DIR$/7001-school-service/7001-school-service.iml" filepath="$PROJECT_DIR$/7001-school-service/7001-school-service.iml" />

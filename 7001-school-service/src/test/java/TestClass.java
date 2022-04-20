@@ -1,3 +1,4 @@
+import cn.hutool.core.date.DateUtil;
 import cn.hutool.json.JSON;
 import cn.hutool.json.JSONUtil;
 import com.hfg.entity.School;
@@ -27,7 +28,9 @@ public class TestClass {
 
     @Test
     public void test11() {
-        getClasss(BlobTest.class);
+        String date = "2022-04-20";
+        System.out.println(DateUtil.parse(date));
+//        getClasss(BlobTest.class);
     }
 
     @Test

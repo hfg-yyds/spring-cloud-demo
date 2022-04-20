@@ -8,8 +8,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="5005-xxl-job-admin" />
-        <module name="9004-authorization-service" />
         <module name="9002-eureka-server" />
+        <module name="9004-authorization-service" />
         <module name="9001-eureka-service" />
         <module name="9007-apollo-client" />
         <module name="8002-autodeliver-service" />
@@ -17,6 +17,7 @@
         <module name="8003-resume-service" />
         <module name="5001-gate-way" />
         <module name="6002-hystrix-dashboard" />
+        <module name="5007-xxl-job-executor" />
         <module name="9019-sendemail-service" />
         <module name="9016-redis-service" />
         <module name="7001-school-service" />
@@ -26,10 +27,24 @@
         <module name="9010-rocketmq-producer" />
         <module name="9013-rocketmq-consumer" />
       </profile>
+      <profile name="Annotation profile for spring-cloud-demo" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct-processor/1.5.0.RC1/mapstruct-processor-1.5.0.RC1.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct/1.5.0.RC1/mapstruct-1.5.0.RC1.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.20/lombok-1.18.20.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok-mapstruct-binding/0.2.0/lombok-mapstruct-binding-0.2.0.jar" />
+        </processorPath>
+        <module name="10001-mapstruct" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
+      <module name="10001-mapstruct" target="1.8" />
       <module name="5001-gate-way" target="8" />
       <module name="5005-xxl-job-admin" target="8" />
+      <module name="5007-xxl-job-executor" target="8" />
       <module name="6001-hystrix-turbine" target="8" />
       <module name="6002-hystrix-dashboard" target="8" />
       <module name="7001-school-service" target="8" />
@@ -53,7 +68,9 @@
   <component name="JavacSettings">
     <option name="PREFER_TARGET_JDK_COMPILER" value="false" />
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="10001-mapstruct" options="-parameters" />
       <module name="5001-gate-way" options="-parameters" />
+      <module name="5007-xxl-job-executor" options="-parameters" />
       <module name="6001-hystrix-turbine" options="-parameters" />
       <module name="6002-hystrix-dashboard" options="-parameters" />
       <module name="7001-school-service" options="-parameters" />

@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/10001-mapstruct/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/5001-gate-way/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/5005-xxl-job-admin/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/5005-xxl-job-admin/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/5007-xxl-job-executor/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/6001-hystrix-turbine/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/6002-hystrix-dashboard/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/7001-school-service/src/main/java" charset="UTF-8" />

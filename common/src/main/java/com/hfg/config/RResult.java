@@ -42,7 +42,7 @@ public class RResult {
     public static RResult ok(){
         RResult rResult = new RResult();
         rResult.setSuccess(true);
-        rResult.setCode(ResultCode.SUCCESS);
+        rResult.setCode(RResultCode.SUCCESS);
         rResult.setMessage("成功");
         return rResult;
     }
@@ -50,7 +50,7 @@ public class RResult {
     public static RResult error(){
         RResult rResult = new RResult();
         rResult.setSuccess(false);
-        rResult.setCode(ResultCode.ERROR);
+        rResult.setCode(RResultCode.ERROR);
         rResult.setMessage("失败");
         return rResult;
     }
