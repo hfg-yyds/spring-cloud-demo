@@ -12,9 +12,9 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
  */
 @SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
 @Slf4j
-public class RocketMQProducerService9110 {
+public class RocketMQProducer9110 {
     public static void main(String[] args) {
         log.info("RocketMQ服务4001启动了");
-        SpringApplication.run(RocketMQProducerService9110.class,args);
+        SpringApplication.run(RocketMQProducer9110.class,args);
     }
 }

@@ -1,4 +1,4 @@
-package com.hfg.config;
+package com.hfg.listener;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.rocketmq.spring.annotation.RocketMQMessageListener;
@@ -12,11 +12,12 @@ import org.springframework.stereotype.Component;
  */
 
 @Component
-@RocketMQMessageListener(topic = "first-topic",consumerGroup = "my-consumer-group")
+@RocketMQMessageListener(topic = "first-topic",consumerGroup = "consumerA-group")
 @Slf4j
 public class Consumer implements RocketMQListener<String> {
     @Override
     public void onMessage(String message) {
+        //消费topic为first-topic的消息
         System.out.println(message);
     }
 }

@@ -21,21 +21,4 @@ import java.util.Collection;
 @RequestMapping("/consumer")
 public class ConsumerController {
 
-    @Resource(name = "consumer")
-    private DefaultLitePullConsumer pullConsumer;
-
-    Integer count = 0;
-
-    @SneakyThrows
-    @GetMapping("/getMessage/{topic}")
-    public RResult getMessage(@PathVariable String topic) {
-        System.out.println("请求进来了");
-        Collection<MessageQueue> messageQueues = pullConsumer.fetchMessageQueues(topic);
-        for (MessageQueue messageQueue : messageQueues) {
-            String queueTopic = messageQueue.getTopic();
-        }
-        System.out.println("请求出去了");
-        return RResult.ok().data("msgsList","msgsList");
-    }
-
 }
