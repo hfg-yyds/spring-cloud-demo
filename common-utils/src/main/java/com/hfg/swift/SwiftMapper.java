@@ -1,10 +1,10 @@
 package com.hfg.swift;
 
 import com.hfg.entity.Cat;
-import com.hfg.po.CatPO;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
+import com.hfg.po.CatPO;
 
 /**
  * @Author: Zero

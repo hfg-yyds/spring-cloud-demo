@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/10001-mapstruct/10001-mapstruct.iml" filepath="$PROJECT_DIR$/10001-mapstruct/10001-mapstruct.iml" />
       <module fileurl="file://$PROJECT_DIR$/10003-pdfbox-service/10003-pdfbox-service.iml" filepath="$PROJECT_DIR$/10003-pdfbox-service/10003-pdfbox-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/5001-gate-way/5001-gate-way.iml" filepath="$PROJECT_DIR$/5001-gate-way/5001-gate-way.iml" />
       <module fileurl="file://$PROJECT_DIR$/5005-xxl-job-admin/5005-xxl-job-admin.iml" filepath="$PROJECT_DIR$/5005-xxl-job-admin/5005-xxl-job-admin.iml" />
@@ -22,7 +21,9 @@
       <module fileurl="file://$PROJECT_DIR$/9013-rocketmq-consumer/9013-rocketmq-consumer.iml" filepath="$PROJECT_DIR$/9013-rocketmq-consumer/9013-rocketmq-consumer.iml" />
       <module fileurl="file://$PROJECT_DIR$/9016-redis-service/9016-redis-service.iml" filepath="$PROJECT_DIR$/9016-redis-service/9016-redis-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/9019-sendemail-service/9019-sendemail-service.iml" filepath="$PROJECT_DIR$/9019-sendemail-service/9019-sendemail-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LeetCode/LeetCode.iml" filepath="$PROJECT_DIR$/LeetCode/LeetCode.iml" />
       <module fileurl="file://$PROJECT_DIR$/common/common.iml" filepath="$PROJECT_DIR$/common/common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common-utils/common-utils.iml" filepath="$PROJECT_DIR$/common-utils/common-utils.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-cloud-demo.iml" filepath="$PROJECT_DIR$/spring-cloud-demo.iml" />
     </modules>
   </component>
