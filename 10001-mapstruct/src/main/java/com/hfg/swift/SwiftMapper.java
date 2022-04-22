@@ -19,4 +19,5 @@ public interface SwiftMapper {
     @Mapping(source = "catName", target = "name")
     @Mapping(source = "catAge",target = "age")
     CatPO carToCarDto(Cat cat);
+
 }

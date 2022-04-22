@@ -18,8 +18,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @Configuration
 public class SecurityConfiger extends WebSecurityConfigurerAdapter {
 
-    //
-
     /**
      * 注册一个认证管理器对象到容器
      * @return
@@ -56,4 +54,5 @@ public class SecurityConfiger extends WebSecurityConfigurerAdapter {
     public PasswordEncoder passwordEncoder() {
         return NoOpPasswordEncoder.getInstance();  //密码不进行加密处理
     }
+
 }

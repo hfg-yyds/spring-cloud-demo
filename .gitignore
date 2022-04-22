@@ -23,6 +23,18 @@ README.md
 *.tar.gz
 *.rar
 
+
+#xxl-job-admin后台过滤
+*.css
+*.js
+*.html
+*.map
+*.eot
+*.ttf
+*.svg
+*.woff
+*.otf
+*.woff2
 #// 6.5 3  7.5 3  150  zz50  tq   xmjq 60 1   一年  5天年假  tdfy 200    200/ren  200/   shbing 200/ren
 #// 6xyj  5gedian
 #// byz   youx    sfzhm  lizhizy

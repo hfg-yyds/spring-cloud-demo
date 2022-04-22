@@ -4,10 +4,12 @@ package com.hfg.controller;
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.date.LocalDateTimeUtil;
 import cn.hutool.core.io.file.FileReader;
+import com.hfg.config.R;
 import com.hfg.config.RResult;
 import com.hfg.entity.Consumer;
 import com.hfg.mapper.ConsumerMapper;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.bind.annotation.RestController;
@@ -50,5 +52,7 @@ public class ConsumerController {
         }
         return RResult.ok().data("list",list);
     }
+
+
 }
 

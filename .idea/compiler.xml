@@ -8,14 +8,15 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="5005-xxl-job-admin" />
-        <module name="9002-eureka-server" />
         <module name="9004-authorization-service" />
+        <module name="9002-eureka-server" />
         <module name="9001-eureka-service" />
         <module name="9007-apollo-client" />
         <module name="8002-autodeliver-service" />
         <module name="6001-hystrix-turbine" />
         <module name="8003-resume-service" />
         <module name="5001-gate-way" />
+        <module name="10003-pdfbox-service" />
         <module name="6002-hystrix-dashboard" />
         <module name="5007-xxl-job-executor" />
         <module name="9019-sendemail-service" />
@@ -42,6 +43,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
       <module name="10001-mapstruct" target="1.8" />
+      <module name="10003-pdfbox-service" target="8" />
       <module name="5001-gate-way" target="8" />
       <module name="5005-xxl-job-admin" target="8" />
       <module name="5007-xxl-job-executor" target="8" />
@@ -69,6 +71,7 @@
     <option name="PREFER_TARGET_JDK_COMPILER" value="false" />
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="10001-mapstruct" options="-parameters" />
+      <module name="10003-pdfbox-service" options="-parameters" />
       <module name="5001-gate-way" options="-parameters" />
       <module name="5007-xxl-job-executor" options="-parameters" />
       <module name="6001-hystrix-turbine" options="-parameters" />

@@ -8,6 +8,7 @@ import lombok.Data;
  * @Date: 2022/4/20 12:24
  * @Description:
  */
+
 @Data
 @AllArgsConstructor
 public class Cat {
@@ -17,4 +18,5 @@ public class Cat {
     private String catName;
 
     private String catAge;
+
 }

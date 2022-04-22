@@ -1,19 +1,13 @@
 package com.hfg.controller;
 
-import com.hfg.config.RResult;
-import com.hfg.pojo.MessageRequest;
+import com.hfg.config.R;
 import io.swagger.annotations.ApiOperation;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.rocketmq.client.producer.DefaultMQProducer;
-import org.apache.rocketmq.client.producer.SendResult;
-import org.apache.rocketmq.common.message.Message;
+import org.apache.rocketmq.spring.core.RocketMQTemplate;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
-import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @Author: Zero
@@ -26,29 +20,15 @@ import java.util.List;
 public class ProducerController {
 
     @Resource
-    private DefaultMQProducer producer;
+    private RocketMQTemplate rocketMQTemplate;
 
     @SneakyThrows
-    @GetMapping("/sendMessage/{topic}/{info}")
+    @GetMapping("/sendMessage/{info}")
     @ApiOperation("发送普通消息")
-    public RResult sendMessage(@PathVariable String info, @PathVariable String topic) {
-        Message message = new Message(topic, info.getBytes(StandardCharsets.UTF_8));
-        SendResult sendResult = producer.send(message);
-        return RResult.ok().data("sendResult",sendResult);
+    public R sendMessage(@PathVariable String info) {
+        rocketMQTemplate.convertAndSend("first-topic","你好,Java旅途" + info);
+        return R.ok();
     }
 
-    @SneakyThrows
-    @PostMapping("/sendBatchMessage")
-    public RResult sendBatchMessage(@RequestBody MessageRequest messageRequest) {
-        String topic = messageRequest.getTopic();
-        List<String> messages = messageRequest.getMessages();
-        ArrayList<Message> messageList = new ArrayList<>();
-        for (String s : messages) {
-            Message message = new Message(topic, s.getBytes(StandardCharsets.UTF_8));
-            messageList.add(message);
-        }
-        SendResult sendResult = producer.send(messageList);
-        return RResult.ok().data("sendResult",sendResult);
-    }
 
 }

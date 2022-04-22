@@ -24,6 +24,7 @@
         <module>9019-sendemail-service</module>
         <module>5007-xxl-job-executor</module>
         <module>10001-mapstruct</module>
+        <module>10003-pdfbox-service</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -70,13 +71,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
-
-        <!--po转换为DTO-->
-<!--        <dependency>-->
-<!--            <groupId>org.mapstruct</groupId>-->
-<!--            <artifactId>mapstruct</artifactId>-->
-<!--            <version>1.4.2.Final</version>-->
-<!--        </dependency>-->
 
     </dependencies>
 
