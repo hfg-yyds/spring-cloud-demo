@@ -37,7 +37,7 @@ public class ListSplitter<T> {
      * @return 返回分割之后的list的子集合
      */
     public List<T> next(){
-        int endIndex= (Math.min(index + chunksize, list.size()));
+        int endIndex= Math.min(index + chunksize, list.size());
         List<T> ret= list.subList(index, endIndex);
         index = endIndex;
         return ret;

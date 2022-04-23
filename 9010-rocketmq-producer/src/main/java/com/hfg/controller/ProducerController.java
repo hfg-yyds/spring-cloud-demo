@@ -47,16 +47,17 @@ public class ProducerController {
     }
 
     @GetMapping("/sendSynMessage/{message}")
-    @ApiOperation(value = "同步发送消息")
+    @ApiOperation(value = "同步发送消息 topic:syn_tag",notes = "topic:syn_tag")
     public R sendSynMessage(@PathVariable String message) {
         Message<String> message1 = MessageBuilder.withPayload(message).build();
-//        设置发送地和消息信息并发送同步消息
+        //设置发送地和消息信息并发送同步消息
         SendResult sendResult = rocketMQTemplate.syncSend(rocketMQConfiguration.getSyn_tag(), message1);
+        System.out.println(sendResult.toString());
         return R.ok(sendResult);
     }
 
     @GetMapping("/sendAsynMessage/{info}")
-    @ApiOperation(value = "发送异步消息")
+    @ApiOperation(value = "发送异步消息 topic:asyn_tag")
     public R sendAsynMessage(@PathVariable String info) {
         Message<String> message = MessageBuilder.withPayload(info)
                 .setHeader(RocketMQHeaders.KEYS, 3).build();
@@ -65,7 +66,7 @@ public class ProducerController {
     }
 
     @GetMapping("/sendOneWayMessage/{info}")
-    @ApiOperation("发送单向消息,不关注发送结果,一般用于记录日志")
+    @ApiOperation("发送单向消息,不关注发送结果,一般用于记录日志 topic:oneway_tag")
     public R sendOneWayMessage(@PathVariable String info) {
         Message<String> message = MessageBuilder.withPayload(info).setHeader(
                 RocketMQHeaders.KEYS, 4
@@ -73,7 +74,7 @@ public class ProducerController {
         return R.run(()->rocketMQTemplate.sendOneWay(rocketMQConfiguration.getOneway_tag(),message));
     }
 
-    @ApiOperation(value = "发送包含顺序的单向消息")
+    @ApiOperation(value = "发送包含顺序的单向消息 topic:syn_tag")
     @GetMapping("/sendSequeueMessage/{id}")
     public R sendSequeueMessage(@PathVariable Integer id) {
         List<SendResult> resultList = new ArrayList<>();
@@ -118,7 +119,7 @@ public class ProducerController {
     }
 
     @GetMapping("/sendDelayMessage/{info}")
-    @ApiOperation(value = "发送延迟消息")
+    @ApiOperation(value = "发送延迟消息 topic:syn_tag")
     public R sendDelayMessage(@PathVariable String info) {
         Message<String> message = MessageBuilder.withPayload(info).build();
         // 设置超时和延时推送
@@ -129,7 +130,7 @@ public class ProducerController {
                 message,1 * 1000l, 4));
     }
 
-    @ApiOperation(value = "发送批量消息")
+    @ApiOperation(value = "发送批量消息 topic:syn_tag")
     @PostMapping("/sendBatchMessage")
     public R sendBatchMessage (@RequestBody BatchMessageRequest request) {
         org.apache.rocketmq.common.message.Message message1 = new org.apache.rocketmq.common.message.Message();
@@ -148,6 +149,33 @@ public class ProducerController {
             sendResults.add(sendResult);
         }
         return R.ok(sendResults);
+    }
+
+    @ApiOperation("SQL过滤消息 topic:syn_tag")
+    @GetMapping("/sendSqlMessag/{info}")
+    public R sendSqlMessag(@PathVariable int id) {
+        ArrayList<SendResult> results = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            String messageStr = i+" "+id;
+            Message<String> message = MessageBuilder.withPayload(messageStr).setHeader(RocketMQHeaders.KEYS
+                    , id).setHeader("money", i).build();
+            SendResult sendResult = rocketMQTemplate.syncSend(rocketMQConfiguration.getSyn_tag(), message);
+            results.add(sendResult);
+        }
+        return R.ok(results);
+    }
+
+    @ApiOperation("发送事务消息 topic:syn_tag")
+    @GetMapping("/sendTransactionMessage/{id}")
+    public R sendTransactionMessage(@PathVariable String id) {
+        String messageStr = "order id : " + id;
+        Message<String> message = MessageBuilder.withPayload(messageStr)
+                .setHeader(RocketMQHeaders.KEYS, id)
+                .setHeader("money", 10)
+                .setHeader(RocketMQHeaders.TRANSACTION_ID, id)
+                .build();
+        return R.run(()->rocketMQTemplate.sendMessageInTransaction
+                (rocketMQConfiguration.getSyn_tag(),message,null));
     }
 
 

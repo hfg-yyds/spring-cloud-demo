@@ -26,6 +26,7 @@
         <module>10003-pdfbox-service</module>
         <module>common-utils</module>
         <module>LeetCode</module>
+        <module>9014-rocketmq-consumer</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

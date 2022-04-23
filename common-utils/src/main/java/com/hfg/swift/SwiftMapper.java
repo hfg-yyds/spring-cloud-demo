@@ -9,7 +9,7 @@ import com.hfg.po.CatPO;
 /**
  * @Author: Zero
  * @Date: 2022/4/20 12:26
- * @Description:
+ * @Description:MAPStruct使用
  */
 @Mapper
 public interface SwiftMapper {

@@ -13,10 +13,9 @@
         <module name="9001-eureka-service" />
         <module name="9007-apollo-client" />
         <module name="8002-autodeliver-service" />
-        <module name="6001-hystrix-turbine" />
         <module name="8003-resume-service" />
+        <module name="6001-hystrix-turbine" />
         <module name="5001-gate-way" />
-        <module name="common-utils" />
         <module name="10003-pdfbox-service" />
         <module name="6002-hystrix-dashboard" />
         <module name="5007-xxl-job-executor" />
@@ -25,9 +24,23 @@
         <module name="7001-school-service" />
         <module name="8004-autodeliver-service" />
         <module name="common" />
+        <module name="9014-rocketmq-consumer" />
         <module name="8001-resume-service" />
         <module name="9010-rocketmq-producer" />
         <module name="9013-rocketmq-consumer" />
+        <module name="LeetCode" />
+      </profile>
+      <profile name="Annotation profile for spring-cloud-demo" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct-processor/1.5.0.RC1/mapstruct-processor-1.5.0.RC1.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct/1.5.0.RC1/mapstruct-1.5.0.RC1.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.20/lombok-1.18.20.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok-mapstruct-binding/0.2.0/lombok-mapstruct-binding-0.2.0.jar" />
+        </processorPath>
+        <module name="common-utils" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
@@ -49,11 +62,13 @@
       <module name="9007-apollo-client" target="8" />
       <module name="9010-rocketmq-producer" target="8" />
       <module name="9013-rocketmq-consumer" target="8" />
+      <module name="9014-rocketmq-consumer" target="8" />
       <module name="9016-redis-service" target="8" />
       <module name="9019-sendemail-service" target="8" />
       <module name="apollo-clent-8089" target="8" />
       <module name="common" target="8" />
       <module name="common-utils" target="1.8" />
+      <module name="LeetCode" target="8" />
       <module name="spring-cloud-demo" target="8" />
     </bytecodeTargetLevel>
   </component>
@@ -77,8 +92,10 @@
       <module name="9007-apollo-client" options="-parameters" />
       <module name="9010-rocketmq-producer" options="-parameters" />
       <module name="9013-rocketmq-consumer" options="-parameters" />
+      <module name="9014-rocketmq-consumer" options="-parameters" />
       <module name="9016-redis-service" options="-parameters" />
       <module name="9019-sendemail-service" options="-parameters" />
+      <module name="LeetCode" options="-parameters" />
       <module name="apollo-clent-8089" options="-parameters" />
       <module name="common" options="-parameters" />
       <module name="common-utils" options="-parameters" />

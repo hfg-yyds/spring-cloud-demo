@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/10001-mapstruct/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/10003-pdfbox-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/5001-gate-way/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/5005-xxl-job-admin/src/main/java" charset="UTF-8" />
@@ -20,8 +19,10 @@
     <file url="file://$PROJECT_DIR$/9007-apollo-client/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/9010-rocketmq-producer/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/9013-rocketmq-consumer/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/9014-rocketmq-consumer/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/9016-redis-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/9019-sendemail-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/LeetCode/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/common-utils/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/common/src/main/java" charset="UTF-8" />
   </component>

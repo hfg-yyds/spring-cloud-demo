@@ -1,8 +1,11 @@
 package com.hfg.config;
 
+import cn.hutool.json.JSONUtil;
 import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
 
 @Data
+@Slf4j
 public class R<T> {
 
     private String code;
@@ -40,6 +43,7 @@ public class R<T> {
     public static R<?> error(Throwable e){
         final R<?> result = error();
         result.message = e.getMessage();
+        log.error("异常信息:"+JSONUtil.toJsonStr(e));
         return result;
     }
 
@@ -49,6 +53,7 @@ public class R<T> {
             runnable.run();
             return ok();
         }catch (Throwable e){
+            log.error("异常信息:"+JSONUtil.toJsonStr(e));
             return error(e);
         }
     }
@@ -57,6 +62,7 @@ public class R<T> {
         try{
             return ok(runnable.run());
         }catch (Throwable e){
+            log.error("异常信息:"+JSONUtil.toJsonStr(e));
             return (R<V>)error(e);
         }
     }
