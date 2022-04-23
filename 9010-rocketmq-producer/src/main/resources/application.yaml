@@ -9,8 +9,13 @@ rocketmq:
   name-server: CentOS:9876 #nameservice服务器地址（多个以英文逗号隔开）
   producer:
     group: producerA-group
-    topic: topicA   #消息主题
     syn_tag: syn_tagA  #同步消息
     asyn_tag: asyn_tagA  #异步消息
     oneway_tag: oneway_tagA #单向消息
 
+logging:
+  file:
+    path: /usr/log/mqconsumerservice/mqconsumerservice.log
+  level:
+    root: INFO
+    com.hfg: DEBUG

@@ -19,6 +19,8 @@ import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import javax.validation.constraints.NotNull;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,23 +44,21 @@ public class ProducerController {
     @GetMapping("/sendMessage/{info}")
     @ApiOperation("发送普通消息")
     public R sendMessage(@PathVariable String info) {
-        rocketMQTemplate.convertAndSend("first-topic","你好,Java旅途" + info);
-        return R.ok();
+        return R.run(()->rocketMQTemplate.convertAndSend("first-topic","你好,Java旅途" + info));
     }
 
     @GetMapping("/sendSynMessage/{message}")
     @ApiOperation(value = "同步发送消息 topic:syn_tag",notes = "topic:syn_tag")
-    public R sendSynMessage(@PathVariable String message) {
-        Message<String> message1 = MessageBuilder.withPayload(message).build();
+    public R<SendResult> sendSynMessage(@NotNull(message = "不能为空") @PathVariable String info) {
+        Message<String> message = MessageBuilder.withPayload(info).build();
         //设置发送地和消息信息并发送同步消息
-        SendResult sendResult = rocketMQTemplate.syncSend(rocketMQConfiguration.getSyn_tag(), message1);
-        System.out.println(sendResult.toString());
+        SendResult sendResult = rocketMQTemplate.syncSend(rocketMQConfiguration.getSyn_tag(), message);
         return R.ok(sendResult);
     }
 
     @GetMapping("/sendAsynMessage/{info}")
     @ApiOperation(value = "发送异步消息 topic:asyn_tag")
-    public R sendAsynMessage(@PathVariable String info) {
+    public R<?> sendAsynMessage(@PathVariable String info) {
         Message<String> message = MessageBuilder.withPayload(info)
                 .setHeader(RocketMQHeaders.KEYS, 3).build();
         return R.run(()->rocketMQTemplate.asyncSend(rocketMQConfiguration.getAsyn_tag(),
@@ -67,7 +67,7 @@ public class ProducerController {
 
     @GetMapping("/sendOneWayMessage/{info}")
     @ApiOperation("发送单向消息,不关注发送结果,一般用于记录日志 topic:oneway_tag")
-    public R sendOneWayMessage(@PathVariable String info) {
+    public R<?> sendOneWayMessage(@PathVariable String info) {
         Message<String> message = MessageBuilder.withPayload(info).setHeader(
                 RocketMQHeaders.KEYS, 4
         ).build();
@@ -76,7 +76,7 @@ public class ProducerController {
 
     @ApiOperation(value = "发送包含顺序的单向消息 topic:syn_tag")
     @GetMapping("/sendSequeueMessage/{id}")
-    public R sendSequeueMessage(@PathVariable Integer id) {
+    public R<List<SendResult>> sendSequeueMessage(@PathVariable Integer id) {
         List<SendResult> resultList = new ArrayList<>();
         for (int i = 1; i < 4; i++) {
             // 处理当前订单唯一标识
@@ -120,7 +120,7 @@ public class ProducerController {
 
     @GetMapping("/sendDelayMessage/{info}")
     @ApiOperation(value = "发送延迟消息 topic:syn_tag")
-    public R sendDelayMessage(@PathVariable String info) {
+    public R<SendResult> sendDelayMessage(@PathVariable String info) {
         Message<String> message = MessageBuilder.withPayload(info).build();
         // 设置超时和延时推送
         // 超时时针对请求broker然后结果返回给product的耗时
@@ -132,10 +132,10 @@ public class ProducerController {
 
     @ApiOperation(value = "发送批量消息 topic:syn_tag")
     @PostMapping("/sendBatchMessage")
-    public R sendBatchMessage (@RequestBody BatchMessageRequest request) {
+    public R<List<SendResult>> sendBatchMessage (@RequestBody BatchMessageRequest request) {
         org.apache.rocketmq.common.message.Message message1 = new org.apache.rocketmq.common.message.Message();
         List<String> list = request.getList();
-        ArrayList<SendResult> sendResults = new ArrayList<>();
+        List<SendResult> sendResults = new ArrayList<>();
         ArrayList<Message> messages = new ArrayList<>();
         for (String s : list) {
             Message<String> message = MessageBuilder.withPayload(s).build();
@@ -153,7 +153,7 @@ public class ProducerController {
 
     @ApiOperation("SQL过滤消息 topic:syn_tag")
     @GetMapping("/sendSqlMessag/{info}")
-    public R sendSqlMessag(@PathVariable int id) {
+    public R<List<SendResult>> sendSqlMessag(@PathVariable int id) {
         ArrayList<SendResult> results = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
             String messageStr = i+" "+id;

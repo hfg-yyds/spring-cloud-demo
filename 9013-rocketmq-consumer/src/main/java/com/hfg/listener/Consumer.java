@@ -14,11 +14,11 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @Component
 @RocketMQMessageListener(consumerGroup = "${rocketmq.consumer.group}",topic =
-        "asyn_tagA", messageModel = MessageModel.CLUSTERING)
-public class ConsumerAsyn implements RocketMQListener<String> {
+        "syn_tag", selectorExpression = "syn_tagA||asyn_tagA||oneway_tagA",messageModel = MessageModel.CLUSTERING)
+public class Consumer implements RocketMQListener<String> {
     @Override
     public void onMessage(String message) {
-        System.out.println("ConsumerB消费asyn_tagA主题的消息");
+        System.out.println("Consumer消费topic主题的消息");
         System.out.println(message);
     }
 }
